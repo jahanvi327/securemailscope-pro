@@ -30,7 +30,7 @@ export function Sidebar({ currentPage, onNavigate, hasAnalysis }: SidebarProps) 
     <aside className="w-60 shrink-0 bg-slate-900/60 border-r border-slate-800 flex flex-col h-screen sticky top-0">
       <div className="px-5 py-5 border-b border-slate-800">
         <div className="flex items-center gap-2.5">
-          <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-sky-500 to-cyan-600 flex items-center justify-center shadow-lg shadow-sky-500/20">
+          <div className="brand-mark w-9 h-9 rounded-lg bg-gradient-to-br from-sky-500 to-cyan-600 flex items-center justify-center shadow-lg shadow-sky-500/20">
             <Mail className="w-5 h-5 text-white" />
           </div>
           <div>
@@ -50,7 +50,7 @@ export function Sidebar({ currentPage, onNavigate, hasAnalysis }: SidebarProps) 
               key={item.id}
               onClick={() => !disabled && onNavigate(item.id)}
               disabled={disabled}
-              className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-all ${
+              className={`nav-item w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-all ${
                 active
                   ? 'bg-sky-500/10 text-sky-400 border border-sky-500/20'
                   : disabled

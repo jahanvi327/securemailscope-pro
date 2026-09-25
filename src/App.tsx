@@ -60,13 +60,13 @@ function App() {
               </div>
             )}
 
-            {hasAnalysis && currentPage === 'dashboard' && <Dashboard result={analysis!} />}
+            {analysis && currentPage === 'dashboard' && <Dashboard result={analysis} />}
             {currentPage === 'upload' && <UploadPage onAnalysisComplete={handleAnalysisComplete} onNavigate={handleNavigate} />}
-            {hasAnalysis && currentPage === 'sessions' && <SessionsPage result={analysis!} />}
-            {hasAnalysis && currentPage === 'findings' && <FindingsPage result={analysis!} />}
-            {hasAnalysis && currentPage === 'certificates' && <CertificatesPage result={analysis!} />}
-            {hasAnalysis && currentPage === 'tls' && <TlsPage result={analysis!} />}
-            {hasAnalysis && currentPage === 'reports' && <ReportsPage result={analysis!} />}
+            {analysis && currentPage === 'sessions' && <SessionsPage result={analysis} />}
+            {analysis && currentPage === 'findings' && <FindingsPage result={analysis} />}
+            {analysis && currentPage === 'certificates' && <CertificatesPage result={analysis} />}
+            {analysis && currentPage === 'tls' && <TlsPage result={analysis} />}
+            {analysis && currentPage === 'reports' && <ReportsPage result={analysis} />}
             {currentPage === 'settings' && <SettingsPage policy={policy} onPolicyChange={handlePolicyChange} />}
           </div>
         </div>

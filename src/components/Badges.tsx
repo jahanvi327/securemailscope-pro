@@ -33,7 +33,7 @@ export function ScoreGauge({ score, size = 160 }: { score: number; size?: number
         <circle
           cx={size / 2} cy={size / 2} r={radius} fill="none" stroke={color} strokeWidth="10"
           strokeDasharray={circumference} strokeDashoffset={offset} strokeLinecap="round"
-          style={{ transition: 'stroke-dashoffset 0.8s ease-out' }}
+          className="score-gauge-progress"
         />
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
