@@ -61,32 +61,6 @@
   --motion-snappy: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-:root.light {
-  --background: oklch(0.98 0.006 255);
-  --foreground: oklch(0.2 0.035 263);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.2 0.035 263);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.2 0.035 263);
-  --primary: oklch(0.61 0.16 235);
-  --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.94 0.012 255);
-  --secondary-foreground: oklch(0.25 0.04 263);
-  --muted: oklch(0.94 0.012 255);
-  --muted-foreground: oklch(0.48 0.035 255);
-  --accent: oklch(0.92 0.035 230);
-  --accent-foreground: oklch(0.25 0.06 240);
-  --border: oklch(0.86 0.02 255);
-  --input: oklch(0.88 0.02 255);
-  --ring: oklch(0.61 0.16 235);
-  --color-bg: #f4f8fc;
-  --color-surface: #ffffff;
-  --color-surface-2: #eaf1f8;
-  --color-border: #d8e2ee;
-  --color-text: #172033;
-  --color-text-muted: #5f6f86;
-}
-
 @layer base {
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -187,53 +161,7 @@
     border-bottom-color: rgb(56 189 248 / 0.55);
     animation: orbit-spin 9s linear infinite reverse;
   }
-  .theme-toggle-icon {
-    display: grid;
-    place-items: center;
-    transition: transform 420ms var(--motion-smooth);
-  }
-  .theme-toggle:hover .theme-toggle-icon { transform: rotate(14deg) scale(1.08); }
 }
-
-:root.light body { color-scheme: light; }
-:root.dark body { color-scheme: dark; }
-:root.light .bg-slate-950 { background-color: #f4f8fc; }
-:root.light .bg-slate-950\/85 { background-color: rgb(244 248 252 / 0.9); }
-:root.light .bg-slate-950\/70 { background-color: rgb(226 234 243 / 0.72); }
-:root.light .bg-slate-900 { background-color: #ffffff; }
-:root.light .bg-slate-900\/95 { background-color: rgb(255 255 255 / 0.97); }
-:root.light .bg-slate-900\/80 { background-color: rgb(255 255 255 / 0.9); }
-:root.light .bg-slate-900\/60 { background-color: rgb(255 255 255 / 0.82); }
-:root.light .bg-slate-900\/50 { background-color: rgb(255 255 255 / 0.7); }
-:root.light .bg-slate-800 { background-color: #e8eff7; }
-:root.light .bg-slate-800\/50 { background-color: rgb(226 234 243 / 0.62); }
-:root.light .bg-slate-800\/30 { background-color: rgb(226 234 243 / 0.42); }
-:root.light .bg-slate-700 { background-color: #d8e2ee; }
-:root.light .text-slate-100 { color: #172033; }
-:root.light .text-slate-200 { color: #24324a; }
-:root.light .text-slate-300 { color: #36465f; }
-:root.light .text-slate-400 { color: #52647c; }
-:root.light .text-slate-500 { color: #66768d; }
-:root.light .text-slate-600 { color: #8a98aa; }
-:root.light .border-slate-800,
-:root.light .border-slate-800\/70,
-:root.light .border-slate-800\/50 { border-color: #d8e2ee; }
-:root.light .border-slate-700,
-:root.light .border-slate-700\/50 { border-color: #c7d4e2; }
-:root.light .border-slate-600 { border-color: #aebdce; }
-:root.light .grid-pattern {
-  background-image:
-    linear-gradient(rgb(148 163 184 / 0.16) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(148 163 184 / 0.16) 1px, transparent 1px);
-}
-:root.light .soc-card { box-shadow: 0 8px 24px rgb(30 64 100 / 0.07), inset 0 1px 0 rgb(255 255 255 / 0.7); }
-:root.light .hover\:bg-slate-700:hover { background-color: #d8e2ee; }
-:root.light .hover\:bg-slate-800\/50:hover,
-:root.light .hover\:bg-slate-800\/30:hover { background-color: rgb(216 226 238 / 0.72); }
-:root.light .hover\:text-slate-200:hover,
-:root.light .hover\:text-slate-300:hover { color: #172033; }
-:root.light .scrollbar-thin::-webkit-scrollbar-track { background: #e2eaf3; }
-:root.light .scrollbar-thin::-webkit-scrollbar-thumb { background: #b7c5d5; }
 
 @layer utilities {
   .scrollbar-thin::-webkit-scrollbar { width: 6px; height: 6px; }

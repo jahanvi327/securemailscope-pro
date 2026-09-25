@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Shield, Upload, LayoutDashboard, Table, AlertTriangle, BadgeCheck, Lock, FileText, Settings, Menu, X, Moon, Sun } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Shield, Upload, LayoutDashboard, Table, AlertTriangle, BadgeCheck, Lock, FileText, Settings, Menu, X } from 'lucide-react';
 
 export type PageId = 'dashboard' | 'upload' | 'sessions' | 'findings' | 'certificates' | 'tls' | 'reports' | 'settings';
 
@@ -29,41 +28,8 @@ interface SidebarProps {
 
 export function Sidebar({ currentPage, onNavigate, hasAnalysis }: SidebarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
 
   useEffect(() => setMenuOpen(false), [currentPage]);
-
-  useEffect(() => {
-    const savedTheme = window.localStorage.getItem('secure-mail-scope-theme');
-    const nextTheme = savedTheme === 'light' ? 'light' : 'dark';
-    setTheme(nextTheme);
-    document.documentElement.classList.toggle('light', nextTheme === 'light');
-    document.documentElement.classList.toggle('dark', nextTheme === 'dark');
-  }, []);
-
-  const toggleTheme = () => {
-    const nextTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(nextTheme);
-    window.localStorage.setItem('secure-mail-scope-theme', nextTheme);
-    document.documentElement.classList.toggle('light', nextTheme === 'light');
-    document.documentElement.classList.toggle('dark', nextTheme === 'dark');
-  };
-
-  const themeToggle = (className = '') => (
-    <Button
-      type="button"
-      variant="ghost"
-      size="icon"
-      onClick={toggleTheme}
-      className={`theme-toggle shrink-0 rounded-xl border border-slate-700 bg-slate-900 text-slate-300 hover:bg-slate-800 hover:text-slate-100 ${className}`}
-      aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-      title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-    >
-      <span className="theme-toggle-icon" aria-hidden="true">
-        {theme === 'dark' ? <Sun /> : <Moon />}
-      </span>
-    </Button>
-  );
 
   const navigate = (page: PageId, disabled: boolean) => {
     if (!disabled) onNavigate(page);
@@ -109,12 +75,9 @@ export function Sidebar({ currentPage, onNavigate, hasAnalysis }: SidebarProps) 
             <h1 className="truncate text-sm font-bold text-slate-100">SecureMailScope</h1>
           </div>
         </button>
-        <div className="flex items-center gap-2">
-          {themeToggle('h-11 w-11')}
-          <Button type="button" variant="ghost" size="icon" onClick={() => setMenuOpen(value => !value)} className="h-11 w-11 rounded-xl border border-slate-700 bg-slate-900 text-slate-300 hover:bg-slate-800 hover:text-slate-100" aria-label={menuOpen ? 'Close navigation' : 'Open navigation'} aria-expanded={menuOpen}>
-            {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </Button>
-        </div>
+        <button onClick={() => setMenuOpen(value => !value)} className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-slate-700 bg-slate-900 text-slate-300" aria-label={menuOpen ? 'Close navigation' : 'Open navigation'} aria-expanded={menuOpen}>
+          {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </button>
       </header>
 
       {menuOpen && (
@@ -142,10 +105,6 @@ export function Sidebar({ currentPage, onNavigate, hasAnalysis }: SidebarProps) 
       {nav()}
 
       <div className="px-4 py-3 border-t border-slate-800">
-        <div className="mb-3 flex items-center justify-between rounded-xl border border-slate-800 bg-slate-900/50 p-2 pl-3">
-          <span className="text-xs font-medium text-slate-400">{theme === 'dark' ? 'Dark mode' : 'Light mode'}</span>
-          {themeToggle()}
-        </div>
         <div className="flex items-center gap-2 text-xs text-slate-500">
           <Shield className="w-3.5 h-3.5" />
           <span>Defensive Analysis Only</span>
