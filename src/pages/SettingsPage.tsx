@@ -44,12 +44,12 @@ export function SettingsPage({ policy, onPolicyChange }: SettingsPageProps) {
 
   return (
     <div className="max-w-3xl mx-auto animate-fade-in space-y-6">
-      <div className="flex items-center justify-between">
-        <div>
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center">
+        <div className="min-w-0">
           <h2 className="text-2xl font-bold text-slate-100">Settings & Security Policy</h2>
           <p className="text-sm text-slate-500 mt-1">Configure the security policy used for analysis</p>
         </div>
-        <div className="flex gap-2">
+        <div className="grid grid-cols-2 gap-2 sm:flex">
           <button onClick={handleReset} className="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800 border border-slate-700 text-slate-400 text-sm hover:bg-slate-700 transition-colors">
             <RotateCcw className="w-4 h-4" /> Reset
           </button>
@@ -87,7 +87,7 @@ export function SettingsPage({ policy, onPolicyChange }: SettingsPageProps) {
           <Key className="w-5 h-5 text-amber-400" />
           <h3 className="text-sm font-semibold text-slate-200">Key Requirements</h3>
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="text-xs text-slate-500 uppercase tracking-wide">Min RSA Key Size (bits)</label>
             <input type="number" value={local.minRsaKeySize} onChange={e => update({ minRsaKeySize: Number(e.target.value) })} className="soc-input w-full mt-1" min={512} max={8192} step={512} />

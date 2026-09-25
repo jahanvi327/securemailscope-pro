@@ -124,8 +124,8 @@ export function TlsPage({ result }: TlsPageProps) {
       </div>
 
       {/* Session table */}
-      <div className="soc-card p-4 mb-4 flex flex-wrap items-center gap-3">
-        <div className="relative flex-1 min-w-[200px]">
+      <div className="soc-card responsive-filters p-4 mb-4 grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center">
+        <div className="relative min-w-0">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
           <input
             type="text"
