@@ -41,12 +41,12 @@ function App() {
     <div className="min-h-screen bg-slate-950 flex">
       <Sidebar currentPage={currentPage} onNavigate={handleNavigate} hasAnalysis={hasAnalysis} />
 
-      <main id="main-content" className="flex-1 overflow-y-auto scrollbar-thin min-h-screen">
+      <main id="main-content" className="app-main min-w-0 flex-1 overflow-y-auto scrollbar-thin min-h-screen">
         <div className="grid-pattern min-h-full">
-          <div className="max-w-7xl mx-auto px-6 py-8">
+          <div className="app-content max-w-7xl mx-auto px-6 py-8">
             {!hasAnalysis && currentPage !== 'upload' && currentPage !== 'settings' && (
-              <div className="flex flex-col items-center justify-center min-h-[60vh] text-center">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-sky-500/20 to-cyan-500/20 flex items-center justify-center mb-4">
+              <div className="empty-state flex flex-col items-center justify-center min-h-[60vh] text-center">
+                <div className="diagnostic-orbit w-24 h-24 rounded-full flex items-center justify-center mb-6">
                   <Shield className="w-8 h-8 text-sky-400" />
                 </div>
                 <h2 className="text-xl font-bold text-slate-200 mb-2">No Analysis Data</h2>

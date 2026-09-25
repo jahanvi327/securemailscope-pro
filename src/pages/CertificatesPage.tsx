@@ -52,8 +52,8 @@ export function CertificatesPage({ result }: CertificatesPageProps) {
       </div>
 
       {/* Filters */}
-      <div className="soc-card p-4 mb-4 flex flex-wrap items-center gap-3">
-        <div className="relative flex-1 min-w-[200px]">
+      <div className="soc-card responsive-filters p-4 mb-4 grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center">
+        <div className="relative min-w-0">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
           <input
             type="text"
@@ -85,12 +85,12 @@ export function CertificatesPage({ result }: CertificatesPageProps) {
             style={{ borderLeftColor: certBorderColor(cert.status) }}
           >
             <div className="flex items-start justify-between gap-3">
-              <div className="flex items-start gap-3">
+              <div className="flex min-w-0 items-start gap-3">
                 <div className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 ${certBgColor(cert.status)}`}>
                   <BadgeCheck className={`w-5 h-5 ${certColor(cert.status)}`} />
                 </div>
-                <div>
-                  <p className="text-sm font-semibold text-slate-200 truncate max-w-[240px]">{cert.subject}</p>
+                <div className="min-w-0">
+                  <p className="text-sm font-semibold text-slate-200 truncate">{cert.subject}</p>
                   <p className="text-xs text-slate-500 mt-0.5">{session.protocol} · {session.destinationIp}</p>
                 </div>
               </div>
@@ -146,7 +146,7 @@ export function CertificatesPage({ result }: CertificatesPageProps) {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <CertField label="Subject" value={selected.subject} />
                 <CertField label="Issuer" value={selected.issuer} />
                 <CertField label="Serial Number" value={selected.serialNumber} mono />

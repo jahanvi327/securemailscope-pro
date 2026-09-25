@@ -93,7 +93,7 @@ export function UploadPage({ onAnalysisComplete, onNavigate }: UploadPageProps) 
         onDragOver={(e) => { e.preventDefault(); setDragActive(true); }}
         onDragLeave={() => setDragActive(false)}
         onDrop={onDrop}
-        className={`relative border-2 border-dashed rounded-xl p-12 text-center transition-all ${
+        className={`relative border-2 border-dashed rounded-xl p-6 sm:p-12 text-center transition-all ${
           dragActive ? 'border-sky-500 bg-sky-500/5' : 'border-slate-700 bg-slate-900/50'
         }`}
       >
@@ -109,7 +109,7 @@ export function UploadPage({ onAnalysisComplete, onNavigate }: UploadPageProps) 
           <div className="flex flex-col items-center gap-4">
             <Loader2 className="w-12 h-12 text-sky-400 animate-spin" />
             <p className="text-slate-300 font-medium">{progress}</p>
-            <div className="w-64 h-1 bg-slate-800 rounded-full overflow-hidden">
+            <div className="w-full max-w-64 h-1 bg-slate-800 rounded-full overflow-hidden">
               <div className="h-full bg-sky-500 animate-pulse-glow" style={{ width: '70%' }} />
             </div>
           </div>

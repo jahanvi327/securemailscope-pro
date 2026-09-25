@@ -66,8 +66,8 @@ export function SessionsPage({ result }: SessionsPageProps) {
       </div>
 
       {/* Filters */}
-      <div className="soc-card p-4 mb-4 flex flex-wrap items-center gap-3">
-        <div className="relative flex-1 min-w-[200px]">
+      <div className="soc-card responsive-filters p-4 mb-4 grid gap-3 sm:grid-cols-2 xl:flex xl:items-center">
+        <div className="relative min-w-0 sm:col-span-2 xl:flex-1">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
           <input
             type="text"
@@ -163,7 +163,7 @@ export function SessionsPage({ result }: SessionsPageProps) {
         <div className="fixed inset-0 z-50 flex justify-end" onClick={() => setSelectedSession(null)}>
           <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
           <div
-            className="relative w-full max-w-lg bg-slate-900 border-l border-slate-800 overflow-y-auto scrollbar-thin animate-fade-in"
+            className="relative mt-16 w-full bg-slate-900 border-l border-slate-800 overflow-y-auto scrollbar-thin animate-fade-in sm:mt-0 sm:max-w-lg"
             onClick={e => e.stopPropagation()}
           >
             <div className="sticky top-0 bg-slate-900 border-b border-slate-800 px-6 py-4 flex items-center justify-between">

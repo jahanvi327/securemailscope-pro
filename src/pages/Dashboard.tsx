@@ -48,15 +48,15 @@ export function Dashboard({ result }: DashboardProps) {
   return (
     <div className="space-y-6 animate-fade-in">
       {/* Header */}
-      <div className="flex items-center justify-between">
-        <div>
+      <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-4 sm:flex sm:items-center sm:justify-between">
+        <div className="min-w-0">
           <h2 className="text-2xl font-bold text-slate-100">Security Dashboard</h2>
           <p className="text-sm text-slate-500 mt-1">
             {result.isDemo ? 'Synthetic demo dataset' : `Analysis of ${result.fileName}`} — {new Date(result.uploadedAt).toLocaleString()}
           </p>
         </div>
         {result.isDemo && (
-          <span className="soc-badge severity-medium">SYNTHETIC DEMO DATA</span>
+          <span className="soc-badge shrink-0 severity-medium">SYNTHETIC DEMO DATA</span>
         )}
       </div>
 

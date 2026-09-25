@@ -48,8 +48,8 @@ export function FindingsPage({ result }: FindingsPageProps) {
       </div>
 
       {/* Filters */}
-      <div className="soc-card p-4 mb-4 flex flex-wrap items-center gap-3">
-        <div className="relative flex-1 min-w-[200px]">
+      <div className="soc-card responsive-filters p-4 mb-4 grid gap-3 sm:grid-cols-2 xl:flex xl:items-center">
+        <div className="relative min-w-0 sm:col-span-2 xl:flex-1">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
           <input
             type="text"
@@ -103,9 +103,9 @@ function FindingCard({ finding, expanded, onToggle }: { finding: SecurityFinding
   return (
     <div className={`soc-card border-l-4 ${severityBorder[finding.severity]} overflow-hidden`}>
       <button onClick={onToggle} className="w-full p-4 flex items-start justify-between gap-4 text-left hover:bg-slate-800/30 transition-colors">
-        <div className="flex items-start gap-3 flex-1">
+        <div className="flex min-w-0 items-start gap-3 flex-1">
           {expanded ? <ChevronDown className="w-4 h-4 text-slate-500 shrink-0 mt-1" /> : <ChevronRight className="w-4 h-4 text-slate-500 shrink-0 mt-1" />}
-          <div className="flex-1">
+          <div className="min-w-0 flex-1">
             <div className="flex items-center gap-2 flex-wrap mb-1">
               <SeverityBadge severity={finding.severity} />
               <span className="text-xs text-slate-500">{finding.category}</span>
