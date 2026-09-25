@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Shield, Upload, LayoutDashboard, Table, AlertTriangle, BadgeCheck, Lock, FileText, Settings, Mail, Menu, X } from 'lucide-react';
+import { Shield, Upload, LayoutDashboard, Table, AlertTriangle, BadgeCheck, Lock, FileText, Settings, Menu, X } from 'lucide-react';
 
 export type PageId = 'dashboard' | 'upload' | 'sessions' | 'findings' | 'certificates' | 'tls' | 'reports' | 'settings';
 
@@ -67,8 +67,8 @@ export function Sidebar({ currentPage, onNavigate, hasAnalysis }: SidebarProps) 
     <>
       <header className="mobile-header fixed inset-x-0 top-0 z-40 hidden h-16 items-center justify-between border-b border-slate-800/70 bg-slate-950/85 px-4 backdrop-blur-xl">
         <button onClick={() => onNavigate('dashboard')} className="flex min-w-0 items-center gap-2.5 text-left" aria-label="Open dashboard">
-          <div className="brand-mark grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-sky-500 to-cyan-600 shadow-lg shadow-sky-500/20">
-            <Mail className="h-5 w-5 text-white" />
+          <div className="brand-mark grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-sky-500 to-cyan-600 shadow-lg shadow-sky-500/20" aria-hidden="true">
+            <span className="brand-letter">M</span>
           </div>
           <div className="min-w-0">
             <p className="flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-[0.2em] text-cyan-400"><span className="h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse" />Live Interface</p>
@@ -92,8 +92,8 @@ export function Sidebar({ currentPage, onNavigate, hasAnalysis }: SidebarProps) 
       <aside className="desktop-sidebar w-60 shrink-0 bg-slate-900/60 border-r border-slate-800 flex flex-col h-screen sticky top-0">
       <div className="px-5 py-5 border-b border-slate-800">
         <div className="flex items-center gap-2.5">
-          <div className="brand-mark w-9 h-9 rounded-lg bg-gradient-to-br from-sky-500 to-cyan-600 flex items-center justify-center shadow-lg shadow-sky-500/20">
-            <Mail className="w-5 h-5 text-white" />
+          <div className="brand-mark w-9 h-9 rounded-lg bg-gradient-to-br from-sky-500 to-cyan-600 flex items-center justify-center shadow-lg shadow-sky-500/20" aria-hidden="true">
+            <span className="brand-letter">M</span>
           </div>
           <div>
             <h1 className="text-sm font-bold text-slate-100 tracking-tight">SecureMailScope</h1>
