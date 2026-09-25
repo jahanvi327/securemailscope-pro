@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Theme selection is controlled by a `light`/`dark` class on the root element and persisted under `secure-mail-scope-theme`, keeping all screens synchronized.
