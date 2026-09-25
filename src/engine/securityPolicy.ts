@@ -1,0 +1,60 @@
+import type { SecurityPolicy } from '@/types';
+export type { SecurityPolicy };
+
+export const defaultPolicy: SecurityPolicy = {
+  deprecatedTlsVersions: ['TLS 1.0', 'TLS 1.1'],
+  weakCipherSuites: [
+    'TLS_RSA_WITH_RC4_128_SHA',
+    'TLS_RSA_WITH_3DES_EDE_CBC_SHA',
+    'TLS_ECDHE_RSA_WITH_RC4_128_SHA',
+    'TLS_RSA_WITH_AES_128_CBC_SHA',
+    'TLS_RSA_WITH_AES_256_CBC_SHA',
+    'TLS_EMPTY_RENEGOTIATION_INFO_SCSV',
+  'TLS_RSA_WITH_AES_128_CBC_SHA256',
+    'TLS_RSA_WITH_AES_256_CBC_SHA256',
+  'EXPORT',
+    'NULL',
+    'ANON',
+  'RC4',
+    '3DES',
+    'DES',
+  'MD5',
+  'CBC',
+  'PSK',
+  'SRP',
+  'RSA',
+  'EXPORT1024',
+  'FALLBACK_SCSV',
+  'RSA_WITH_RC4',
+    'RSA_WITH_3DES',
+    'ECDHE_RSA_WITH_RC4',
+    'RSA_WITH_AES_128_CBC',
+    'RSA_WITH_AES_256_CBC',
+    'EMPTY_RENEGOTIATION',
+    'RSA_WITH_AES_128_CBC_SHA256',
+    'RSA_WITH_AES_256_CBC_SHA256',
+  'RSA_WITH_NULL',
+    'ECDH_anon',
+    'DH_anon',
+    'RSA_EXPORT',
+    'RSA_FIPS',
+  ],
+  minRsaKeySize: 2048,
+  minEccKeySize: 256,
+  weakSignatureAlgorithms: ['md5', 'sha1', 'md2', 'md4'],
+  requireForwardSecrecy: false,
+  requireStartTls: false,
+  maxCertValidityDays: 825,
+  scoreWeights: {
+    tlsConfiguration: 25,
+    certificateSecurity: 20,
+    protocolSecurity: 15,
+    encryptionCoverage: 20,
+    cryptographicStrength: 15,
+    configurationWeaknesses: 5,
+  },
+};
+
+export function clonePolicy(policy: SecurityPolicy): SecurityPolicy {
+  return JSON.parse(JSON.stringify(policy));
+}
